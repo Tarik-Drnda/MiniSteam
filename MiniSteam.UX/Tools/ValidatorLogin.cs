@@ -4,19 +4,30 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MiniSteam.Data;
+using MiniSteam.Infrastructure;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace MiniSteam.UX.Tools
 {
-    internal class ValidatorLogin
+    public class ValidatorLogin
     {
-        public static bool ValidInput()
+        public static User FindUser(string username,string password)
         {
-            bool valid = true;
-            if (frmLogin.txtUsername.Text.isValid() || frmLogin.txtPassword.Text.isValid())
+            dynamic usr=null;
+            foreach (var user in InMemoryDB.users)
             {
-
+                if (username == user.Ime && password == user.Password)
+                {
+                    usr=user;
+                    break;
+                }
             }
+
+
+            return usr;
         }
+
+
     }
 }
