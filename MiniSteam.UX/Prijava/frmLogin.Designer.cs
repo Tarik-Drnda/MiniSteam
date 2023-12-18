@@ -37,6 +37,7 @@
             btnLogin = new Button();
             errLoginError = new ErrorProvider(components);
             pcbLogin = new PictureBox();
+            btnNewUser = new Button();
             ((System.ComponentModel.ISupportInitialize)errLoginError).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pcbLogin).BeginInit();
             SuspendLayout();
@@ -113,6 +114,19 @@
             pcbLogin.TabIndex = 6;
             pcbLogin.TabStop = false;
             // 
+            // btnNewUser
+            // 
+            btnNewUser.BackColor = Color.Red;
+            btnNewUser.ForeColor = Color.Black;
+            btnNewUser.Location = new Point(149, 238);
+            btnNewUser.Name = "btnNewUser";
+            btnNewUser.Size = new Size(177, 23);
+            btnNewUser.TabIndex = 7;
+            btnNewUser.Text = "Sign up";
+            btnNewUser.UseVisualStyleBackColor = false;
+            btnNewUser.Click += btnNewUser_Click;
+            btnNewUser.MouseHover += btnNewUser_MouseHover;
+            // 
             // frmLogin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -120,6 +134,7 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(700, 338);
+            Controls.Add(btnNewUser);
             Controls.Add(pcbLogin);
             Controls.Add(lblPassword);
             Controls.Add(lblUsername);
@@ -148,5 +163,6 @@
         private Button btnLogin;
         private ErrorProvider errLoginError;
         private PictureBox pcbLogin;
+        private Button btnNewUser;
     }
 }

@@ -10,24 +10,31 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace MiniSteam.UX.Tools
 {
-    public class ValidatorLogin
+    public class Validator
     {
-        public static User FindUser(string username,string password)
+       public static bool ValidanUnos(Control kontrola,ErrorProvider er,string tekst)
         {
-            dynamic usr=null;
-            foreach (var user in InMemoryDB.users)
+            bool valid = true;
+            if(kontrola is TextBox && (kontrola as TextBox) == null)
             {
-                if (username == user.Ime && password == user.Password)
-                {
-                    usr=user;
-                    break;
-                }
+                valid = false;
             }
+            else if(kontrola is ComboBox && (kontrola as ComboBox) == null)
+            {
+                valid = false;
 
-
-            return usr;
+            }
+            else if(kontrola is PictureBox && (kontrola as PictureBox) == null)
+            {
+                valid = false;
+            }
+            if(!valid)
+            {
+                er.SetError(kontrola, tekst);
+                return false;
+            }    
+            return valid;
         }
-
 
     }
 }
