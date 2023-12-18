@@ -49,14 +49,15 @@
             dgvGamesWindow.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvGamesWindow.Columns.AddRange(new DataGridViewColumn[] { GameName, Author, Description, Rating });
             dgvGamesWindow.GridColor = Color.FromArgb(0, 192, 0);
-            dgvGamesWindow.Location = new Point(12, 78);
+            dgvGamesWindow.Location = new Point(10, 58);
+            dgvGamesWindow.Margin = new Padding(3, 2, 3, 2);
             dgvGamesWindow.MultiSelect = false;
             dgvGamesWindow.Name = "dgvGamesWindow";
             dgvGamesWindow.ReadOnly = true;
             dgvGamesWindow.RowHeadersWidth = 51;
             dgvGamesWindow.RowTemplate.Height = 29;
             dgvGamesWindow.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvGamesWindow.Size = new Size(957, 404);
+            dgvGamesWindow.Size = new Size(837, 303);
             dgvGamesWindow.TabIndex = 0;
             // 
             // GameName
@@ -97,50 +98,55 @@
             // 
             // btnLogOut
             // 
-            btnLogOut.Location = new Point(875, 12);
+            btnLogOut.Location = new Point(766, 9);
+            btnLogOut.Margin = new Padding(3, 2, 3, 2);
             btnLogOut.Name = "btnLogOut";
-            btnLogOut.Size = new Size(94, 49);
+            btnLogOut.Size = new Size(82, 37);
             btnLogOut.TabIndex = 1;
             btnLogOut.Text = "Log out";
             btnLogOut.UseVisualStyleBackColor = true;
             // 
             // pcbProfilePicture
             // 
-            pcbProfilePicture.Location = new Point(12, 10);
+            pcbProfilePicture.Location = new Point(10, 8);
+            pcbProfilePicture.Margin = new Padding(3, 2, 3, 2);
             pcbProfilePicture.Name = "pcbProfilePicture";
-            pcbProfilePicture.Size = new Size(95, 62);
+            pcbProfilePicture.Size = new Size(83, 46);
             pcbProfilePicture.TabIndex = 2;
             pcbProfilePicture.TabStop = false;
             // 
             // txtName
             // 
             txtName.Font = new Font("Showcard Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtName.Location = new Point(323, 10);
+            txtName.Location = new Point(283, 8);
+            txtName.Margin = new Padding(3, 2, 3, 2);
             txtName.Multiline = true;
             txtName.Name = "txtName";
-            txtName.Size = new Size(283, 60);
+            txtName.Size = new Size(248, 46);
             txtName.TabIndex = 3;
             // 
             // lblWelcome
             // 
             lblWelcome.AutoSize = true;
             lblWelcome.Font = new Font("Showcard Gothic", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
-            lblWelcome.Location = new Point(142, 26);
+            lblWelcome.Location = new Point(124, 20);
             lblWelcome.Name = "lblWelcome";
-            lblWelcome.Size = new Size(158, 35);
+            lblWelcome.Size = new Size(123, 28);
             lblWelcome.TabIndex = 4;
             lblWelcome.Text = "Welcome ";
             // 
             // frmMain
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(982, 494);
+            BackgroundImage = Properties.Resources.loginPicture;
+            ClientSize = new Size(859, 370);
             Controls.Add(lblWelcome);
             Controls.Add(txtName);
             Controls.Add(pcbProfilePicture);
             Controls.Add(btnLogOut);
             Controls.Add(dgvGamesWindow);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "frmMain";
             Text = "MiniSteam";
             Load += frmMain_Load;

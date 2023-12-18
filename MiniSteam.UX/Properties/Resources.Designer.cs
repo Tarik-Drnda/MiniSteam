@@ -63,6 +63,16 @@ namespace MiniSteam.UX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap loginPicture {
+            get {
+                object obj = ResourceManager.GetObject("loginPicture", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap shigure_ui_dance {
             get {
                 object obj = ResourceManager.GetObject("shigure-ui-dance", resourceCulture);
