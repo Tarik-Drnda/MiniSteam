@@ -28,19 +28,20 @@ namespace MiniSteam.UX
         {
             if (ValidanLogin())
             {
-                User? korisnik = null;
+                //User? korisnik = null;
 
-                var korisnici = baza.Users.ToList();
+                var korisnici = baza.Users.ToList().Where(u => u.UserName==txtUsername.Text && u.Password==txtPassword.Text);
 
-                foreach (var user in korisnici)
+                //foreach (var user in korisnici)
+                //{
+                //    if (user.Ime == txtUsername.Text && user.Password == txtPassword.Text)
+                //    {
+                //        korisnik = user;
+                //    }
+                //}
+                if (korisnici.Count() > 0)
                 {
-                    if (user.Ime == txtUsername.Text && user.Password == txtPassword.Text)
-                    {
-                        korisnik = user;
-                    }
-                }
-                if (korisnik != null)
-                {
+                    loggedUser = korisnici.First() as User;
                     var fMain = new frmMain();
                     fMain.ShowDialog();
                 }
