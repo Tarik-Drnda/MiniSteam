@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -13,7 +15,18 @@ namespace MiniSteam.Data.Helpers
         {
             return string.IsNullOrEmpty(tekst);
         }
-    
+        public static Image ToImage(this byte[] sadrzaj)
+        {
+            var ms=new MemoryStream(sadrzaj);
+            return Image.FromStream(ms);
+
+        }
+        public static byte[] ToByteArray(this Image sadrzaj)
+        {
+            var ms = new MemoryStream();
+            sadrzaj.Save(ms, ImageFormat.Jpeg);
+            return ms.ToArray();
+        }
 
     }
 }
