@@ -8,13 +8,13 @@
         public string Prezime { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
-        public byte[] pPicture { get; set; }
+        public byte[] ? pPicture { get; set; }
         
         
         public User() 
         {
-            //games = new List<Game>();
+           // games = new List<Game>();
         }
-        //    public List<Game> games { get; set; }
+           //public List<Game> games { get; set; }
     }
 }

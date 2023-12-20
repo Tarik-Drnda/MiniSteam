@@ -1,4 +1,5 @@
-﻿namespace MiniSteam.UX
+﻿using System.Drawing;
+namespace MiniSteam.UX
 {
     partial class frmMain
     {
@@ -34,11 +35,10 @@
             Description = new DataGridViewTextBoxColumn();
             Rating = new DataGridViewTextBoxColumn();
             btnLogOut = new Button();
-            pcbProfilePicture = new PictureBox();
-            txtName = new TextBox();
-            lblWelcome = new Label();
+            lblCaption = new Label();
+            cmbRatingGames = new ComboBox();
+            lblRating = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvGamesWindow).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pcbProfilePicture).BeginInit();
             SuspendLayout();
             // 
             // dgvGamesWindow
@@ -49,15 +49,14 @@
             dgvGamesWindow.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvGamesWindow.Columns.AddRange(new DataGridViewColumn[] { GameName, Author, Description, Rating });
             dgvGamesWindow.GridColor = Color.FromArgb(0, 192, 0);
-            dgvGamesWindow.Location = new Point(10, 58);
-            dgvGamesWindow.Margin = new Padding(3, 2, 3, 2);
+            dgvGamesWindow.Location = new Point(11, 77);
             dgvGamesWindow.MultiSelect = false;
             dgvGamesWindow.Name = "dgvGamesWindow";
             dgvGamesWindow.ReadOnly = true;
             dgvGamesWindow.RowHeadersWidth = 51;
             dgvGamesWindow.RowTemplate.Height = 29;
             dgvGamesWindow.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvGamesWindow.Size = new Size(837, 303);
+            dgvGamesWindow.Size = new Size(957, 404);
             dgvGamesWindow.TabIndex = 0;
             // 
             // GameName
@@ -98,60 +97,61 @@
             // 
             // btnLogOut
             // 
-            btnLogOut.Location = new Point(766, 9);
-            btnLogOut.Margin = new Padding(3, 2, 3, 2);
+            btnLogOut.Location = new Point(875, 12);
             btnLogOut.Name = "btnLogOut";
-            btnLogOut.Size = new Size(82, 37);
+            btnLogOut.Size = new Size(94, 49);
             btnLogOut.TabIndex = 1;
             btnLogOut.Text = "Log out";
             btnLogOut.UseVisualStyleBackColor = true;
             // 
-            // pcbProfilePicture
+            // lblCaption
             // 
-            pcbProfilePicture.Location = new Point(10, 8);
-            pcbProfilePicture.Margin = new Padding(3, 2, 3, 2);
-            pcbProfilePicture.Name = "pcbProfilePicture";
-            pcbProfilePicture.Size = new Size(83, 46);
-            pcbProfilePicture.TabIndex = 2;
-            pcbProfilePicture.TabStop = false;
+            lblCaption.AutoSize = true;
+            lblCaption.BackColor = Color.Transparent;
+            lblCaption.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblCaption.ForeColor = SystemColors.ControlLightLight;
+            lblCaption.Location = new Point(14, 26);
+            lblCaption.Name = "lblCaption";
+            lblCaption.Size = new Size(148, 38);
+            lblCaption.TabIndex = 2;
+            lblCaption.Text = "MiniSteam";
             // 
-            // txtName
+            // cmbRatingGames
             // 
-            txtName.Font = new Font("Showcard Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtName.Location = new Point(283, 8);
-            txtName.Margin = new Padding(3, 2, 3, 2);
-            txtName.Multiline = true;
-            txtName.Name = "txtName";
-            txtName.Size = new Size(248, 46);
-            txtName.TabIndex = 3;
+            cmbRatingGames.FormattingEnabled = true;
+            cmbRatingGames.Location = new Point(384, 37);
+            cmbRatingGames.Name = "cmbRatingGames";
+            cmbRatingGames.Size = new Size(209, 28);
+            cmbRatingGames.TabIndex = 3;
+            cmbRatingGames.SelectedIndexChanged += cmbRatingGames_SelectedIndexChanged;
             // 
-            // lblWelcome
+            // lblRating
             // 
-            lblWelcome.AutoSize = true;
-            lblWelcome.Font = new Font("Showcard Gothic", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
-            lblWelcome.Location = new Point(124, 20);
-            lblWelcome.Name = "lblWelcome";
-            lblWelcome.Size = new Size(123, 28);
-            lblWelcome.TabIndex = 4;
-            lblWelcome.Text = "Welcome ";
+            lblRating.AutoSize = true;
+            lblRating.BackColor = Color.Transparent;
+            lblRating.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblRating.ForeColor = SystemColors.ControlLightLight;
+            lblRating.Location = new Point(277, 34);
+            lblRating.Name = "lblRating";
+            lblRating.Size = new Size(92, 31);
+            lblRating.TabIndex = 4;
+            lblRating.Text = "Rating: ";
             // 
             // frmMain
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.loginPicture;
-            ClientSize = new Size(859, 370);
-            Controls.Add(lblWelcome);
-            Controls.Add(txtName);
-            Controls.Add(pcbProfilePicture);
+            ClientSize = new Size(982, 493);
+            Controls.Add(lblRating);
+            Controls.Add(cmbRatingGames);
+            Controls.Add(lblCaption);
             Controls.Add(btnLogOut);
             Controls.Add(dgvGamesWindow);
-            Margin = new Padding(3, 2, 3, 2);
             Name = "frmMain";
             Text = "MiniSteam";
             Load += frmMain_Load;
             ((System.ComponentModel.ISupportInitialize)dgvGamesWindow).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pcbProfilePicture).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -164,8 +164,8 @@
         private DataGridViewTextBoxColumn Description;
         private DataGridViewTextBoxColumn Rating;
         private Button btnLogOut;
-        private PictureBox pcbProfilePicture;
-        private TextBox txtName;
-        private Label lblWelcome;
+        private Label lblCaption;
+        private ComboBox cmbRatingGames;
+        private Label lblRating;
     }
 }

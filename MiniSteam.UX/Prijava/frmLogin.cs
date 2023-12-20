@@ -42,7 +42,7 @@ namespace MiniSteam.UX
                 if (korisnici.Count() > 0)
                 {
                     loggedUser = korisnici.First() as User;
-                    var fMain = new frmMain();
+                    var fMain = new frmMain(loggedUser);
                     fMain.ShowDialog();
                 }
                 else

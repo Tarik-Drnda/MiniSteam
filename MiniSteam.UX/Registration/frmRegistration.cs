@@ -1,4 +1,5 @@
 ﻿using MiniSteam.Data;
+using MiniSteam.Data.Helpers;
 using MiniSteam.UX.Tools;
 using System;
 using System.Collections.Generic;
@@ -27,12 +28,14 @@ namespace MiniSteam.UX.Registration
                 Email = txtEmail.Text,
                 Password = txtPassword.Text,
                 Prezime = txtPrezime.Text,
-                Ime = txtIme.Text
-
+                Ime = txtIme.Text,
+                UserName= txtUserName.Text,
+                pPicture=pbRegistrationPhoto.Image.ToByteArray()
             };
+            
             baza.Users.Add(user);
             baza.SaveChanges();
-
+            DialogResult = DialogResult.OK;
         }
 
         private void btnSelectPhoto_Click(object sender, EventArgs e)
